@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- bootstrap - css  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign_up</title>
+
+    <!-- bootstrap - css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- bootstrap - js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -20,27 +21,9 @@
     
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
-<meta charset="UTF-8">
-<title>Insert title here</title>
+
 </head>
 <body>
-
-<%
-	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String userid = "jsp";
-	String userpw = "123456";
-	Connection conn = null;
-	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		conn = DriverManager.getConnection(url, userid, userpw);
-	} catch(Exception e){
-		out.println("오라클 접속 실패: " + e.getMessage());
-	}
-%>
-
-
-
-
 
     <header class="p-3 text-bg-dark">
         <!-- 사이드바 -->
@@ -90,7 +73,7 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow rounded">
                         <div class="card-body p-5 text-center">
-                            <h3 class="mb-5">회원가입</h3>
+                            <h3 class="mb-5">회원정보 입력</h3>
 
                             <hr class="mt-3">
                             
@@ -107,28 +90,32 @@
                                     <label for="floatingPassword">비밀번호</label>
                                   </div>
                                   <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="floatingName" placeholder="Email">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">비밀번호 확인</label>
+                                  </div>
+                                  <div class="form-floating mb-2">
+                                    <input type="name" class="form-control" id="floatingName" placeholder="Email">
                                     <label for="floatingName">회원이름</label>
                                   </div>
                                   <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="floatingEmail" placeholder="Email">
+                                    <input type="email" class="form-control" id="floatingEmail" placeholder="Email">
                                     <label for="floatingEmail">이메일</label>
                                   </div>
                                   <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="floatingZip_num" placeholder="Email">
+                                    <input type="zip_num" class="form-control" id="floatingZip_num" placeholder="Email">
                                     <label for="floatingZip_num">우편번호</label>
                                   </div>
                                   <button>검색</button>
                                   <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="floatingAddress" placeholder="Address">
+                                    <input type="address" class="form-control" id="floatingAddress" placeholder="Address">
                                     <label for="floatingAddress">주소</label>
                                   </div>
                                   <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="floatingAddress" placeholder="Address">
+                                    <input type="address" class="form-control" id="floatingAddress" placeholder="Address">
                                     <label for="floatingAddress">상세주소</label>
                                   </div>
                                   <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="floatingPhone" placeholder="Address">
+                                    <input type="phone" class="form-control" id="floatingPhone" placeholder="Address">
                                     <label for="floatingPhone">전화번호</label>
                                   </div>
                               
@@ -166,30 +153,6 @@
 
         </div>
       </section>
-
-
-<%
-
-%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 </body>
 </html>

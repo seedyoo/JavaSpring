@@ -34,7 +34,7 @@
 <% 
 	Statement stmt = null;
 	ResultSet rs = null;
-	String sql = "INSERT INTO MEMBER ID, NAME, PHONE, USEYN FROM MEMBER";
+	String sql = "SELECT ID, NAME, PHONE, USEYN FROM MEMBER";
 	try {
 		stmt = conn.createStatement();
 		rs = stmt.executeQuery(sql);

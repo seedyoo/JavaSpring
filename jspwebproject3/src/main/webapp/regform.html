@@ -126,7 +126,7 @@ body {
     </style>
 </head>
 <body>
-    <form action="regmempro.jsp" method="POST" class="joinForm">
+    <form action="regmempro.jsp" method="POST" class="joinForm" id="joinfrm">
                                                                                                
         <h2>회원가입</h2>
         
@@ -162,13 +162,14 @@ body {
       <script src="js/jquery-3.7.0.min.js"></script>
       <script>
 		  function regmem() {
-			  // 아이디체크
+			  // 아이디 체크
 			  id = $('.id').val();
 			  if(id == "") {
 			  	alert("아이디를 입력하시오");
 				  return;
 			  }
 			  
+			  // 비밀번호 체크
 			  pw = $('.pw').val();
 			  if(pw == "") {
 			  	alert("비밀번호를 입력하시오");
@@ -180,9 +181,7 @@ body {
 			  	alert("이름을 입력하시오");
 				  return;
 			  }
-			  
-			  alert("데이터 등록하러 가기");
-
+			  $('#joinfrm').submit();
 		  }
 	  </script>
 </body>

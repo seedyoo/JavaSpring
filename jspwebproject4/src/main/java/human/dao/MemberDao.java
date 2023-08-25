@@ -62,9 +62,36 @@ public class MemberDao {
 		}
 		
 		closeConn();
+		
 		return rst;
 	}
 	
-	// 여러개의 디비 접속하는 함수
+	// 회원정보를 저장하는 함수
+	public int regMember(String id, String pw, String name, String email, String tel) {
+		
+		System.out.println("회원 정보를 저장함");
+		int rst = 0;
+		
+		getConnect();
+		
+		// 작업
+		try {
+			String sql = "INSERT INTO MEMBER (ID,PWD,NAME,EMAIL,PHONE) VALUES(?,?,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			pstmt.setString(3, name);
+			pstmt.setString(4, email);
+			pstmt.setString(5, tel);
+			rst = pstmt.executeUpdate();
+		} catch(SQLException se) {
+			System.out.println("regMember 쿼리에러: " + se.getMessage());
+		}
+		
+		closeConn();
+		
+		return rst;
+		
+	}
 
 }

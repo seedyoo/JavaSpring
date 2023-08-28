@@ -41,23 +41,7 @@ public class CarVo {
 		this.company = company;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

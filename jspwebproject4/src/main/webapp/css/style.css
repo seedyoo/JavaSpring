@@ -10,7 +10,30 @@ body {
 	background-color: #ffffff;
 }
 header {
-	height: 200px;
+	height: 240px;
+}
+.top {
+	height: 40px;
+	background-color: #666666;
+}
+ul.topmenu {
+	width: 200px;
+	float: right;
+	margin: 0px;
+	list-style-type: none;
+	padding-left: 0;
+}
+ul.topmenu li {
+	float: left;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #ffffff
+}
+ul.topmenu li a {
+	text-decoration: none;
+	color: #ffffff;
 }
 .logo {
 	height: 160px;
@@ -64,6 +87,9 @@ ul.menu li {
 td.join_tag {
 	width: 200px;
 	font-weight: bold;
+}
+.id_check_msg {
+	color: blue;
 }
 .join_table tr input[type=text],
 input[type=password] {

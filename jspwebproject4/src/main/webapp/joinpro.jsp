@@ -25,7 +25,7 @@
 		out.println("등록결과: " + result);
 		
 		if(result!=0) {
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("main2.jsp");
 		}
 		
 	%>

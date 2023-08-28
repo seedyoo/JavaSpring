@@ -22,7 +22,9 @@
 		
 		//	  SelCar(String color, double width, String model);
 		//	->SelCar(CarVo car);
-		
+		out.println("친구자동차 색깔: " + cvo.getColor());
+		out.println("친구자동차 크기: " + cvo.getWidth());
+		out.println("친구자동차 모델: " + cvo.getModel());
 	%>
 
 </body>

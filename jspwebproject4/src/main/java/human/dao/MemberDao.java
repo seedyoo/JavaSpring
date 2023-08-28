@@ -93,5 +93,72 @@ public class MemberDao {
 		return rst;
 		
 	}
+	
+	// 로그인 인증 함수
+	public int loginCheck(String id, String pw) {
+		
+		System.out.println("회원 정보를 인증함");
+		int rst = 0;	// 1이면 로그인성공, 0이면 로그인실패
+		
+		getConnect();
+		// 쿼리작업
+		try {
+			String sql = "SELECT COUNT(*) AS CNT FROM MEMBER WHERE ID = ? AND PWD = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				rst = rs.getInt("CNT");
+			}
+		}catch(SQLException se) {
+			System.out.println("loginCheck 쿼리에러: " + se.getMessage());
+		}
+		
+		closeConn();
+		
+		return rst;
+	}
+	
+	// 아이디 중복체크
+	public int isExistId(String id) {
+		System.out.println("아이디 중복체크");
+		int rst = 0;
+		getConnect();
+		
+		try {
+			String sql="SELECT COUNT(*) AS CNT FROM MEMBER WHERE ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				rst = rs.getInt("CNT");
+			}
+		}catch(SQLException se) {
+			System.out.println("isExistId 쿼리에러: " + se.getMessage());
+		}
+		
+		closeConn();
+		return rst;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

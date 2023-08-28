@@ -13,18 +13,26 @@
 	
 		<!--  헤더영역 -->
 		<header>
+		
+			<div class="top">
+				<ul class="topmenu">
+					<li><a href="login.jsp">로그인</a></li>
+					<li><a href="join.jsp">회원가입</a></li>
+				</ul>
+			</div>
+			
 			<div class="logo">
 				<h1>자바웹프로그래밍 연습</h1>
 			</div>
 			
 			<nav>
 				<ul class="menu">
-					<li>HOME</li>
-					<li>소개</li>
-					<li>클래스</li>
-					<li>고객센터</li>
-					<li>MYPAGE</li>
-					<li>관리자</li>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">소개</a></li>
+					<li><a href="#">클래스</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">MYPAGE</a></li>
+					<li><a href="#">관리자</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -33,19 +41,16 @@
 		<!--  메인영역 -->
 		<div class="main_content">
 		
-			<form action="joinpro.jsp" method="POST">
+			<form action="loginpro.jsp" method="POST">
 			
-			<h2>회원 가입</h2>
-			<h3>회원 이용정보 입력</h3>
+			<h2>로 그 인</h2>
+			<h3>로그인 정보입력</h3>
 			<table class="join_table">
 			
 				<tr>
 					<td class="join_tag">아이디</td>
 					<td>
 						<input class="userid" type="text" name="memid">
-						<input class="join_inner_btn" type="button" value="중복확인">
-						
-						<p class="alert_id">ID는 4글자 이상의 영문 또는 영문+숫자 조합으로 입력하세요</p>
 					</td>
 				</tr>
 				
@@ -57,32 +62,9 @@
 				</tr>
 			</table>
 			
-			<h3>개인정보 입력</h3>
-			<table class="join_table">
-			
-				<tr>
-					<td class="join_tag">이름</td>
-					<td>
-						<input class="username" type="text" name="memname">
-					</td>
-				</tr>
-				<tr>
-					<td class="join_tag">EAMIL</td>
-					<td>
-						<input class="useremail" type="text" name="mememail">
-					</td>
-				</tr>
-				<tr>
-					<td class="join_tag">전화번호</td>
-					<td>
-						<input class="usertel" type="text" name="memtel">
-					</td>
-				</tr>
-			</table>
-			
 			<div class="join_bths">
-				<input type="submit" value="회원 등록">
-				<input type="button" value="취 소">
+				<input type="submit" value="로 그 인">
+				<input type="button" value="회 원 가 입" onclick="location.href='join.jsp'">
 			</div>
 			
 			</form>
@@ -99,30 +81,6 @@
 		</footer>
 
 	</div>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

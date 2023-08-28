@@ -17,17 +17,6 @@
 		// 인증 + 세션생성 모두 되면 
 		// 관리자 목록 mnglist.jsp 출력
 	%>
-	<%
-	String loginBtn = "로그인";
-	String loginLink = "login.jsp";
-	if(session.getAttribute("memid") == null) {
-		loginBtn = "로그인";
-		loginLink = "login.jsp";
-	}else {
-		loginBtn = "로그아웃";
-		loginLink = "logout.jsp";
-	}
-%>
 
 </body>
 </html>

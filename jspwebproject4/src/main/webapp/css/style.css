@@ -90,6 +90,7 @@ td.join_tag {
 }
 .id_check_msg {
 	color: blue;
+	display: inherit;
 }
 .join_table tr input[type=text],
 input[type=password] {

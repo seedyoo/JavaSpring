@@ -61,7 +61,7 @@
 					<td>
 						<input class="userid" type="text" name="memid" id="memid">
 						<input class="join_inner_btn" type="button" value="중복확인" onclick="idcheck();">
-						&nbsp;<span class="id_check_msg">가능</span>
+						&nbsp;<span class="id_check_msg"></span>
 						<p class="alert_id">ID는 4글자 이상의 영문 또는 영문+숫자 조합으로 입력하세요</p>
 					</td>
 				</tr>

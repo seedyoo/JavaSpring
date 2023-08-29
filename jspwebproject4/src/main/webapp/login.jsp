@@ -48,7 +48,6 @@
       </nav>
    </header>
       
-      
    <!-- 메인영역 -->
    <div class="main_content">
    

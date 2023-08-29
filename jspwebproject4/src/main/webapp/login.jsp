@@ -42,8 +42,8 @@
             <li>소개</li>
             <li>클래스</li>
             <li>고객센터</li>
-            <li>MYPAGE</li>
-            <li>관리자</li>
+            <li><a href="mypage.jsp">MYPAGE</a></li>
+            <li><a href="admin/mng_login.html" target="_blank">관리자</a></li>
          </ul>
       </nav>
    </header>
@@ -78,7 +78,6 @@
       </div>      
             
       </form>
-      
       
    </div>
       

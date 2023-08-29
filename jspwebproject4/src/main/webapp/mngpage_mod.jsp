@@ -7,14 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		// 로그인한 관리자만 볼 수 있도록
-	%>
-	<h2>로그인한 관리자 정보 확인</h2>
-	
-	<%
-		// 확인 후 정보 수정처리 mngpage_mod.jsp
-	%>
-	
+
 </body>
 </html>

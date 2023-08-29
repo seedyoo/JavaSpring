@@ -1,5 +1,6 @@
 package human.dao;
 import java.sql.*;
+import human.vo.*;
 
 // 회원테이블에 접속하는 기능
 public class MemberDao {
@@ -120,6 +121,32 @@ public class MemberDao {
 		return rst;
 	}
 	
+	// loginCheck 오버로딩 함수
+	public int loginCheck(MemberVo tempvo) {
+		
+		System.out.println("회원 정보를 인증함");
+		int rst = 0;	// 1이면 로그인성공, 0이면 로그인실패
+		
+		getConnect();
+		// 쿼리작업
+		try {
+			String sql = "SELECT COUNT(*) AS CNT FROM MEMBER WHERE ID = ? AND PWD = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, tempvo.getID());
+			pstmt.setString(2, tempvo.getPWD());
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				rst = rs.getInt("CNT");
+			}
+		}catch(SQLException se) {
+			System.out.println("loginCheck 쿼리에러: " + se.getMessage());
+		}
+		
+		closeConn();
+		
+		return rst;
+	}
+	
 	// 아이디 중복체크
 	public int isExistId(String id) {
 		System.out.println("아이디 중복체크");
@@ -140,6 +167,31 @@ public class MemberDao {
 		
 		closeConn();
 		return rst;
+	}
+	
+	// 아이디로 사용자 정보 검색
+	public MemberVo getMemberById(String id) {
+		System.out.println("아이디로 사용자 정보 검색");
+		MemberVo rstvo = new MemberVo();
+		
+		getConnect();
+		
+		try {
+			String sql="SELECT NAME, EMAIL, PHONE FROM MEMBER WHERE ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs =pstmt.executeQuery();
+			while(rs.next()) {
+				rstvo.setNAME(rs.getString("NAME")); 
+				rstvo.setEMAIL(rs.getString("EMAIL")); 
+				rstvo.setPHONE(rs.getString("PHONE")); 
+			}
+		}catch(SQLException se) {
+			System.out.println("getMemberById 쿼리에러: " + se.getMessage());
+		}
+		
+		return rstvo;
+		
 	}
 
 }

@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 	<%
 		// MANAGER 테이블 유무 확인
 		// 관리자 로그인 화면을 mnglogin.jsp 으로 구현

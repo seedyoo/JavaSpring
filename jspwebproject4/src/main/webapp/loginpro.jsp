@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="human.dao.MemberDao" %>
+<%@ page import="human.vo.MemberVo" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +15,15 @@
 		/* out.println(id + "<br>");
 		out.println(pw + "<br>"); */
 		
+		// DTO에 처리할 값을 저장
+		MemberVo tempvo = new MemberVo();
+		tempvo.setID(id);
+		tempvo.setPWD(pw);
+		
 		MemberDao memdao = new MemberDao();
-		int result = memdao.loginCheck(id, pw);
+		
+		// int result = memdao.loginCheck(id, pw);
+		int result = memdao.loginCheck(tempvo);
 		
 		if(result==1) {
 			session.setAttribute("memid", id);	// id는 로그인시 받은 값임

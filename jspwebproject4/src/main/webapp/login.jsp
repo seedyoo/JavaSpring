@@ -15,11 +15,12 @@
    if(session.getAttribute("memid")==null) {
       loginBtn = "로그인";
       loginLink = "login.jsp";
-   }else{
+   }else {
       loginBtn = "로그아웃";
       loginLink = "logout.jsp";
    }
 %>
+
 <div class="wrapper">
       
    <!-- 헤더영역 -->

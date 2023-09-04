@@ -1,13 +1,16 @@
 @charset "UTF-8";
 
 body {
-	background-color: lightskyblue;
+	background-color: #FFCCAA;
+	min-height: 100%;
 }
 .wrapper {
 	width: 1200px;
 	border: 1px dotted red;
 	margin: 0 auto;
 	background-color: #ffffff;
+	min-height: 100vh;
+	position: relative;
 }
 header {
 	height: 240px;
@@ -19,17 +22,17 @@ header {
 ul.topmenu {
 	width: 200px;
 	float: right;
-	margin: 0px;
+	margin: 0;
 	list-style-type: none;
 	padding-left: 0;
 }
-ul.topmenu li {
+ul.topmenu li {	
 	float: left;
 	width: 100px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
-	color: #ffffff
+	color: #ffffff;
 }
 ul.topmenu li a {
 	text-decoration: none;
@@ -48,7 +51,7 @@ ul.topmenu li a {
 }
 nav {
 	height: 40px;
-	background-color: cadetblue;
+	background-color:cadetblue;
 }
 ul.menu {
 	margin: 0;
@@ -67,8 +70,8 @@ ul.menu li {
 	text-align: center;
 }
 
-/* 게시판 디자인 */
-.main_wrap .sub_banner h2{
+/*게시판 디자인*/
+.main_wrap .sub_banner h2 {
 	text-align: center;
 }
 
@@ -80,6 +83,10 @@ ul.menu li {
 	width: 100%;
 	margin: 20px auto;
 	border-collapse: collapse;
+}
+.post_title {
+	background-color: #111111;
+	color: white;
 }
 .post_num {
 	width: 10%;
@@ -107,10 +114,24 @@ tbody tr {
 	width: 100%;
 }
 .search {
-	/* border: 1px solid red; */
+	/*border: 1px solid red;*/
 	width: 300px;
 	float: right;
 	margin: 20px 0;
+}
+.control {
+	width: 300px;
+	float: right;
+	margin: 20px 0;
+}
+.control_btn {
+	height: 30px;
+	border: none;
+	background-color: #111111;
+	color: #eeeeee;
+	border-radius: 5px;
+	float: right;
+	cursor: pointer;
 }
 .search_box {
 	height: 30px;
@@ -121,6 +142,7 @@ tbody tr {
 	background-color: #111111;
 	color: #eeeeee;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .board_pages {
@@ -128,6 +150,7 @@ tbody tr {
 	width: 100%;
 	list-style-type: none;
 	text-align: center;
+	padding-left: 0;
 }
 .board_pages li {
 	display: inline-block;
@@ -149,12 +172,16 @@ tbody tr {
 	display: inline-block;
 }
 
-/* 푸터영역 */
+/*푸터영역*/
 footer {
 	background-color: #3355ff;
 	color: #ffffff;
 	height: 60px;
 	line-height: 60px;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	width: 1200px;
 }
 footer address {
 	text-align: center;
@@ -162,20 +189,3 @@ footer address {
 footer address span {
 	color: deeppink;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -6,9 +6,9 @@ public class MemberVo {
 	private String PWD; 
 	private String NAME;
 	private String EMAIL;
-//    ZIP_NUM
-//    ADDRESS
-//    ADDRESS2
+//  ZIP_NUM
+//  ADDRESS
+//  ADDRESS2
 	private String PHONE;
 	
 	public String getID() {
@@ -42,3 +42,17 @@ public class MemberVo {
 		PHONE = pHONE;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -84,8 +84,8 @@
 		 %>
 		 
 	         <tr class="post">
-	            <td class="post_num"><%= eachvo.getId() %></td>
-	            <td><%= eachvo.getSubject() %></td>
+	            <td class="post_num"><%= eachvo.getNo() %></td>
+	            <td><a href="bbsread.jsp?no=<%= eachvo.getNo() %>"><%= eachvo.getSubject() %></a></td>
 	            <td class="post_date"><%= eachvo.getRegdate() %></td>
 	            <td class="post_view"><%= eachvo.getHit() %></td>
 	         </tr>

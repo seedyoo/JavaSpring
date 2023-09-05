@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+    
+<%@ page import="human.dao.BoardDao" %>
+<%@ page import="human.vo.BoardVo" %>
+
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +30,7 @@
                 <a href="index.html" class="spur-logo"><i class="fas fa-bolt"></i> <span>관리자</span></a>
             </header>
             <nav class="dash-nav-list">
-                <a href="index.html" class="dash-nav-item">
+                <a href="../index.html" class="dash-nav-item">
                     <i class="fas fa-home"></i> Dashboard </a>
                                     
                 <div class="dash-nav-dropdown ">
@@ -92,31 +99,31 @@
                                     <table class="table table-hover table-in-card">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
+                                                <th scope="col">No</th>
                                                 <th scope="col">제목</th>
                                                 <th scope="col">작성일</th>
                                                 <th scope="col">조회수</th>
                                             </tr>
                                         </thead>
+                                        
                                         <tbody>
+                                        <%
+									         BoardDao bbsdao = new BoardDao();
+									    	 ArrayList<BoardVo> result = bbsdao.getBoardListAll();
+									    	 // out.println(result.size());
+									    	 for(int i=0; i<result.size(); i++) {
+									    		 BoardVo eachvo = result.get(i);
+										 %>
+										 
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row"><%= eachvo.getNo() %></th>
+                                                <td><a href="mng_bbsread.jsp?no=<%= eachvo.getNo() %>"><%= eachvo.getSubject() %></a></td>
+                                                <td><%= eachvo.getRegdate() %></td>
+                                                <td><%= eachvo.getHit() %></td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
+                                        <%
+									    	 }
+                                        %>
                                         </tbody>
                                     </table>
                 
@@ -124,7 +131,7 @@
                                 
                             </div>
 
-                            <button type="button" class="btn btn-primary">글등록</button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='mng_bbswrite.html'">글등록</button>
                             
                         </div> <!--  put your rows / columns here -->
                     </div>
